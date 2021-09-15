@@ -1,0 +1,13 @@
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.detail {
+    display: grid;
+    grid-gap: 100px;
+    padding: 50px;
+    width: 80%;
+    padding-top: 70px;
+}

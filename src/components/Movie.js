@@ -1,9 +1,11 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import "./Movie.css";
 
-function Movie({ year, title, summary, poster, genres }) {
-    return (
+function Movie({ id, year, title, summary, poster, bigPoster, genres, linkFlag }) {
+    const inner = (
         <div className="movie">
-            <img src={poster} alt={title} title={title}/>
+            <img class={linkFlag ? "small_image" : "big_image"} src={poster} alt={title} title={title} />
             <div className="movie_data">
                 <h3 className="movie_title">{title}</h3>
                 <h5 className="movie_year">{year}</h5>
@@ -14,7 +16,19 @@ function Movie({ year, title, summary, poster, genres }) {
                 </ul>
                 <p className="movie_summary">{summary}</p>
             </div>
-        </div>);
+        </div>
+    );
+
+    return linkFlag ? (
+        <Link to={{
+            pathname: `/movie/${id}`,
+            state: {
+                year, title, summary, bigPoster, genres
+            }
+        }}>
+            {inner}
+        </Link>
+    ) : inner;
 }
 
 Movie.propTypes = {
