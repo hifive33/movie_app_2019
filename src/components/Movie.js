@@ -5,7 +5,7 @@ import "./Movie.css";
 function Movie({ id, year, title, summary, poster, bigPoster, genres, linkFlag }) {
     const inner = (
         <div className="movie">
-            <img class={linkFlag ? "small_image" : "big_image"} src={poster} alt={title} title={title} />
+            <img src={poster} alt={title} title={title} />
             <div className="movie_data">
                 <h3 className="movie_title">{title}</h3>
                 <h5 className="movie_year">{year}</h5>
