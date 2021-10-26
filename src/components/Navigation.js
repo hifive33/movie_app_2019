@@ -5,7 +5,7 @@ function Navigation() {
     return <div className="nav">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/hooks">Hooks</Link>
+        <Link to="/hooks/useState">Hooks_useState</Link>
     </div>
 }
 

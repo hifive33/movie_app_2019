@@ -23,7 +23,7 @@ const useTabs = (initialTab, allTabs) => {
     }
 };
 
-const Tabs = () => {
+const UseState_Tabs = () => {
     const {currentItem, changeItem} = useTabs(0, content);
     return (
         <div className="tabs">
@@ -36,4 +36,4 @@ const Tabs = () => {
     )
 }
 
-export default Tabs;
+export default UseState_Tabs;
