@@ -1,6 +1,5 @@
 import { useState } from "react";
-import "./UseState.css";
-import UseStateTabs from "./UseState_Tabs";
+import UseStateTabs from "./UseStateTabs";
 
 const useInput = (initialValue, validator) => {
     const [value, setValue] = useState(initialValue);
@@ -28,17 +27,15 @@ const UseState = () => {
 
     const name = useInput("Mr. ", maxLen);
     return (
-        <section className="container">
-            <div className="UseState">
-                <h1>Hello CodeSandbox {item}</h1>
-                <h2>Start editing to see some magic happen!</h2>
-                <button onClick={incrementItem}>increment</button>
-                <button onClick={decrementItem}>decrement</button>
-                <h1>hello</h1>
-                <input placeholder="Name" {...name} />
-                <UseStateTabs />
-            </div>
-        </section>
+        <div className="UseState">
+            <h1>Hello, UseState! {item}</h1>
+            <h2>Start editing to see some magic happen!</h2>
+            <button onClick={incrementItem}>increment</button>
+            <button onClick={decrementItem}>decrement</button>
+            <h1>hello</h1>
+            <input placeholder="Name" {...name} />
+            <UseStateTabs />
+        </div>
     );
 };
 
