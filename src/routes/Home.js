@@ -1,23 +1,27 @@
-import React from "react";
-import axios from "axios";
-import Movie from "../components/Movie";
-import "./Home.css";
+import React from 'react';
+import axios from 'axios';
+import Movie from '../components/Movie';
+import './Home.css';
 
 class Home extends React.Component {
   state = {
     isLoading: true,
-    movies: []
+    movies: [],
   };
   getMovies = async () => {
-    const { data: { data : { movies }}} = await axios.get("https://yts-proxy.now.sh/list_movies.json?sort_by=rating");
+    const {
+      data: {
+        data: { movies },
+      },
+    } = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=rating');
     this.setState({ movies, isLoading: false });
-  }
+  };
 
   componentDidMount() {
     this.getMovies();
   }
 
-  renderMovies = (movie) =>
+  renderMovies = (movie) => (
     <Movie
       key={movie.id}
       id={movie.id}
@@ -27,7 +31,9 @@ class Home extends React.Component {
       poster={movie.medium_cover_image}
       bigPoster={movie.large_cover_image}
       genres={movie.genres}
-      linkFlag={true} />
+      linkFlag={true}
+    />
+  );
 
   render() {
     const { isLoading, movies } = this.state;
@@ -38,9 +44,7 @@ class Home extends React.Component {
             <span className="loader_text">Loading...</span>
           </div>
         ) : (
-          <div className="movies">
-            {movies.map(this.renderMovies)}
-          </div>
+          <div className="movies">{movies.map(this.renderMovies)}</div>
         )}
       </section>
     );
