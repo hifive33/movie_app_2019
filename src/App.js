@@ -6,6 +6,7 @@ import Navigation from './components/Navigation';
 import UseState from './routes/Hooks/UseState';
 import UseEffect from './routes/Hooks/UseEffect';
 import UseTitle from './routes/Hooks/UseTitle';
+import UseClick from './routes/Hooks/UseClick';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/hooks/useState" component={UseState} />
         <Route path="/hooks/useEffect" component={UseEffect} />
         <Route path="/hooks/useTitle" component={UseTitle} />
+        <Route path="/hooks/useClick" component={UseClick} />
       </section>
       <Route path="/movie/:id" component={Detail} />
     </HashRouter>
